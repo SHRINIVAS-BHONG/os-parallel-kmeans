@@ -1,0 +1,32 @@
+# Word Document Plans (present files)
+*.docx
+High_Performance_Multi_Threaded_Clustering_Project_Plan.docx
+Thread_Pool_Dynamic_Scheduling_Module_Plan.docx
+
+# Build artifacts & Binaries
+*.o
+*.obj
+*.exe
+*.out
+*.so
+*.dylib
+*.a
+bin/
+build/
+
+# Benchmark and runtime generated files
+benchmarks/results/*.csv
+benchmarks/results/*.png
+!benchmarks/results/.gitkeep
+
+# Large datasets
+datasets/*.csv
+datasets/*.bin
+datasets/*.txt
+!datasets/.gitkeep
+
+# Editor & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
