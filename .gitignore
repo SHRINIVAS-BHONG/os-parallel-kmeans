@@ -1,4 +1,4 @@
-# Word Document Plans (present files)
+# Word Document Plans
 *.docx
 High_Performance_Multi_Threaded_Clustering_Project_Plan.docx
 Thread_Pool_Dynamic_Scheduling_Module_Plan.docx
@@ -13,6 +13,12 @@ Thread_Pool_Dynamic_Scheduling_Module_Plan.docx
 *.a
 bin/
 build/
+obj/
+
+# Python cache & runtime
+__pycache__/
+*.py[cod]
+*$py.class
 
 # Benchmark and runtime generated files
 benchmarks/results/*.csv
@@ -32,6 +38,11 @@ datasets/*.txt
 Thumbs.db
 *.log
 
-# Personal Technical Reports
-PERSON3_TECHNICAL_REPORT.md
-*technical_report*.md
+# Zone.Identifier files (Windows metadata)
+*:Zone.Identifier
+
+# Compiled binaries in benchmarks/
+benchmarks/benchmark
+
+# Compiler helper files
+compile_flags.txt
