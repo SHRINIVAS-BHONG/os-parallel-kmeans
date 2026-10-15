@@ -190,7 +190,7 @@ Empirically profiled and verified under **Linux Ubuntu (WSL2)** using GCC `-O3` 
 ### 2. The Grain Size Problem & Parallel Overhead Cut-Off Threshold ($N_{\text{threshold}}$)
 * **The Algorithmic Dilemma:** Parallel execution is not free. Spawning tasks incurs non-zero operating system overheads:
   $$T_{\text{parallel}}(N, P) = \frac{T_{\text{compute}}(N)}{P} + T_{\text{overhead}}(N, P)$$
-  Where $T_{\text{overhead}} = T_{\text{dispatch}} + T_{\text{queue\_locks}} + T_{\text{condvar\_waking}} + T_{\text{reduction}}$.
+  Where $T_{\text{overhead}} = T_{\text{dispatch}} + T_{\text{queue-locks}} + T_{\text{condvar-waking}} + T_{\text{reduction}}$.
   On smaller datasets ($N < 5,000$), $T_{\text{compute}}$ is under 0.5 ms, meaning $T_{\text{overhead}} \gg T_{\text{compute}}$, causing naive multi-threading to run **up to 20x slower** (0.05x speedup).
 * **Our Engineered Solution:** Our `kmeans_adaptive_run()` driver checks $N$ against the empirical break-even threshold ($N \approx 10,000$ points for 4T, $N \approx 25,000$ points for 8T). Below the threshold, it dynamically bypasses multi-threading and routes execution to pure sequential clustering, delivering optimal latency across ALL input sizes without penalty.
 
