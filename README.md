@@ -120,10 +120,6 @@ Empirically profiled and verified under **Linux Ubuntu (WSL2)** using GCC `-O3` 
 
 ## Architecture Overview
 
-<p align="center">
-  <img src="thread_pool_kmeans_flowchart_classic.png" alt="ParaKMeans Architectural Flowchart" width="850"/>
-</p>
-
 ```
                           ┌──────────────────────────┐
                           │   Dataset & Workload     │
